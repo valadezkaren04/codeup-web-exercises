@@ -152,7 +152,8 @@ console.log(calculateTotal(2, 100));
 
 // Generate a random number between 0 and 6
 var luckyNumber = Math.floor(Math.random() * 6);
-var customerBill = prompt("What is your total bill?");
+
+var customerBill = parseFloat(prompt("What is your total bill?"));
 var finalBill = calculateTotal(luckyNumber, customerBill);
 alert("Your lucky, or not, number is: " + luckyNumber + ". Therefore, the price before the discount was: $" + customerBill + ". Your total now is: $" + finalBill);
 
@@ -172,13 +173,26 @@ alert("Your lucky, or not, number is: " + luckyNumber + ". Therefore, the price 
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-if (confirm("Would you like to enter a number?")){
-    var numberEntered = prompt("Enter a number...");
-}
-if (!isNaN(numberEntered)){
-    (numberEntered % 2 !== 0) ? alert(numberEntered + " is even") : alert(numberEntered + " is odd.");
-    alert(numberEntered + " plus 100 is: " + (parseFloat(numberEntered) + 100));
-    (numberEntered > 0) ? alert(numberEntered + " is positive") : alert(numberEntered + " is negative.");
+if (confirm("Would you like to enter a number?")) {
+    var numberEntered = parseFloat(prompt("Enter a number..."));
+    if (!isNaN(numberEntered)) {
+        alert("That is not a number :c");
+    } else {
+        if (numberEntered % 2 !== 0) {
+            alert("Your number is even");
+        } else {
+            alert("Your number is odd");
+        }
+        if (numberEntered > 0) {
+            alert("Your number is positive");
+        } else {
+            alert("Your number is negative");
+        }
+        alert(numberEntered + 100 + " is the final number you get when you add 100.");
+    }
 } else {
-    alert("That is not a number :c");
+    alert("Okay...whatever I guess...");
 }
+
+   // var input = prompt("Enter a number...") ?
+
