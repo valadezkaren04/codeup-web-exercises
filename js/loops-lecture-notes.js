@@ -31,3 +31,13 @@ while(userInput !== "STOP" ) {
         alert("Your total now " + totalCost.toFixed(2));
     }
 }
+// do while loop
+var number = Math.floor(Math.random() * 6) + 1;
+var guess;
+
+do {
+    guess = parseInt(prompt("Enter a number between 1 and 6"));
+} while (guess !== number);
+
+alert("Your guess of " + guess + " matches the number " + number + "!");
+
