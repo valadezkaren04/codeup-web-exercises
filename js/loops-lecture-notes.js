@@ -41,3 +41,18 @@ do {
 
 alert("Your guess of " + guess + " matches the number " + number + "!");
 
+// For Loops
+
+// var count = 0;
+// while(count <= 0) {
+//     console.log(count)
+//     count = count + 1;
+// } // turning while into for loop
+
+for (var count = 0; count <= 100; count = count + 1) {
+    console.log(count);
+}
+
+for (var i = 0; i <= 100; i++) {
+    console.log(i);
+}
