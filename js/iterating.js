@@ -35,7 +35,7 @@ for (var i = 0; i < names.length; i++) {
      * Refactor your above code to use a `forEach` loop
      */
 names.forEach(function(element, index){
-    console.log(element);
+    console.log(element + index);
     })
     /**
      * TODO:
@@ -50,8 +50,9 @@ names.forEach(function(element, index){
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-function threeFunctions(array) {
-
+function lastOne(array) {
+        var last = array.length - 1;
+        return array[last];
     }
-
+    console.log(lastOne());
 })();
