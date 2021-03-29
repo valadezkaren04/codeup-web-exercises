@@ -54,5 +54,5 @@ function lastOne(array) {
         var last = array.length - 1;
         return array[last];
     }
-    console.log(lastOne());
+    console.log(array(lastOne()));
 })();
