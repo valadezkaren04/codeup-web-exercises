@@ -7,7 +7,7 @@
 // if (skippingNumber % 2 === 1) {
 // not done ^^
 
-}
+//}
 
 // another example
 var skipHere;
