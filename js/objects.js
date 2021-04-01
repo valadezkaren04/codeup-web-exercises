@@ -18,8 +18,8 @@
             return "Hello from " + this.firstName + " " + this.lastName;
         }
     }
-    console.log(person.firstName);
-    console.log(person.lastName);
+        console.log(person.firstName);
+        console.log(person.lastName);
 
     /**
      * TODO:
@@ -31,6 +31,13 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
     console.log(person.sayHello());
+// person.sayHello = function () {
+//     return "Hello from " + this.firstName + " " + this.lastName;
+// }
+//
+//person.sayHello();
+
+
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -58,7 +65,20 @@ shoppers.forEach(function(shopper) {
         console.log("Sorry " + shopper.name + ", you only spent $" + shopper.amount + ". In order to get the discount, you need to spend at least $" + (200 - shopper.amount) + " more to get the 12% discount.")
     }
 });
-
+// another way
+// shoppers.forEach(function(shopper) {
+//     var shopperName = shopper.name;
+//     var amountSpent = "$" + shopper.amount.toFixed(2);
+//     var discount;
+//     if (shopper.amount <= 200) {
+//         discount = shopper.amount * .12;
+//     }
+//     var amountAfterDiscount = shopper.amount - discount;
+//     discount = "$" + discount.toFixed(2);
+//     amountAfterDiscount = "$" + amountAfterDiscount.toFixed(2);
+//     var message = shopperName + " spent " + amountSpent + ". Their discount is " + amountAfterDiscount + ".";
+//     console.log(message);
+// });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -73,7 +93,7 @@ shoppers.forEach(function(shopper) {
      * > console.log(books[0].author.lastName) // "Adams"
      */
 var books = [
-       // createBook("Supernatural's Afterlife", "Warner Cousins"),
+       // createBook("Supernatural's Afterlife", "W.B"),
         {
             title: "Supernatural After 15 Years",
             author: {
@@ -112,16 +132,17 @@ var books = [
         {
             title: "Working as A Family",
             author: {
-                firstName: "Warner",
-                lastName: "Cousins"
+                firstName: "W",
+                lastName: "B"
             }
 
         }
 ];
-console.log(books[0].title)
-console.log(books[0].author.firstName)
-console.log(books[0].author.lastName)
-    /**
+//doesn't need the console.log lol [=
+// console.log(books[0].title)
+// console.log(books[0].author.firstName)
+// console.log(books[0].author.lastName)
+     /**
      * TODO:
      * Loop through the books array and output the following information about
      * each book:
@@ -145,7 +166,11 @@ console.log(books[0].author.lastName)
      *      ---
      *      ...
      */
-books.forEach(function(book, index){
+
+   // books.push(createBook("Supernatural Ways", "WB")); //bonus pt. 2 (only this line)
+
+
+    books.forEach(function(book, index){
     console.log("Book # "+ (index + 1));
     console.log("Title: " + book.title);
     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
@@ -161,9 +186,26 @@ books.forEach(function(book, index){
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    // books.forEach(function(book, index) {
-    //     console.log("Book # " + (index + 1));
-    //     showBookInfo(book);
-    //     console.log("---")
-    // });
+    function createBook(title, author) {
+        var nameArray = author.split("");
+        var firstName = nameArray[0];
+        var lastName = nameArray[1];
+        return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName
+            }
+        }
+
+    }
+    books.push(createBook("Supernatural Ways", "WB"));
+    function showBookInfo(book, bookNumber) {
+        console.log("Book # " + (bookNumber + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    }
+    books.forEach(showBookInfo);
+
+
 //})();
