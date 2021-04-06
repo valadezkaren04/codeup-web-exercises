@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form lecture notes</title>
+</head>
+<body>
+    <h1>Forms Lecture Notes</h1>
+    <h1>Exploring the ever present forms in HTML</h1>
+    <hr>
+    <!--methods in forms: GET and POST-->
+    <form method="POST" action="https://request-inspector.glitch.me/">
+
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="username goes here">
+        <!--can also be value for the info to stay-->
+        <br>
+
+        <label for="password">Password</label>
+        <input id="password" name="username" type="password" placeholder="password goes here">
+        <br>
+
+        <label for="body-text">Tell me about yourself...</label><br>
+        <textarea id="body-text" name="body" cols="30" rows="10">Tell me about what you like to do...</textarea><br>
+
+    <!-- radio -->
+    <h3>What is the correct answer?</h3>
+        <input name=multi-choice" id="choice-a" value="wrong" type="radio">
+        <label for="choice-a">A</label>
+        <br>
+
+        <input name=multi-choice" id="choice-b" value="wrong" type="radio">
+        <label for="choice-b">B</label>
+        <br>
+
+        <input name=multi-choice" id="choice-c" value="wrong" type="radio">
+        <label for="choice-c">C</label>
+        <br>
+
+        <input name=multi-choice" id="choice-d" value="correct" type="radio">
+        <label for="choice-d">D</label><br>
+
+    <!-- checkbox -->
+    <h3>How did you hear about us?</h3>
+
+        <label for="ad-bb">Billboard</label>
+        <input id="ad-bb" name="advertising" value="billboard" type="checkbox">
+
+        <label for="ad-yt">YouTube</label>
+        <input id="ad-yt" name="advertising" value="YouTube" type="checkbox">
+
+        <label for="ad-np">Newspaper</label>
+        <input id="ad-np" name="advertising" value="Newspaper" type="checkbox">
+
+
+    <!-- drop-down select -->
+        <h3>
+            <label for="coffee-preference">What kind of coffee do you like?</label>
+        </h3>
+        <select id="coffee-preference" name="coffee-preference">
+            <option value="light">Light Roast</option>
+            <option value="medium">Medium Roast</option>
+            <option value="dark">Dark Roast</option>
+            <option value="expresso">Expresso Blend</option>
+        </select>
+        <br>
+
+        <input name="userId" value="137439" type="hidden">
+        <br>
+
+        <label for="nonactive">Ignore this</label>
+        <input id="nonactive" name="user Id" type="text" disabled value="137439">
+        <br>
+
+    <!-- <input type="submit"> not very custom...-->
+    <button type="submit">Let's goooo!</button>
+
+    </form>
+</body>
+</html>
