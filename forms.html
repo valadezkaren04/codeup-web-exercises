@@ -14,7 +14,7 @@
         <br>
 
         <label for="password">Password</label>
-        <input id="password" name="username" type="password" placeholder="password goes here">
+        <input id="password" name="password" type="password" placeholder="password goes here">
         <br>
 
         <label for="body-text">bio</label><br>
@@ -34,16 +34,16 @@
             <label for="other">other</label>
             <br>
 
-        <h3>What web browser are you using?</h3>
-            <label for="chrome">Chrome</label>
-            <input id="chrome" name="webBrowser" value="chrome" type="checkbox">
-
-            <label for="firefox">FireFox</label>
-            <input id="firefox" name="WebBrowser" value="firefox" type="checkbox">
-
-            <label for="safari">Safari</label>
-            <input id="safari" name="WebBrowser" value="safari" type="checkbox">
-            <br>
+        <h3>
+            <label for="webBrowser">What web browser are you using?</label>
+        </h3>
+        <select id="WebBrowser" name="WebBrowser">
+            <option value="chrome">Chrome</option>
+            <option value="firefox">FireFox</option>
+            <option value="safari">Safari</option>
+            <option value="internetEx">Internet Explorer</option>
+        </select>
+        <br>
 
 
         <button type="submit">submit</button>
