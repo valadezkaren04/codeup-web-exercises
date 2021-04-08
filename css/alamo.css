@@ -1,13 +1,25 @@
-body {
-    font-family: sans-serif;
-    background-color: #efefda;
+@font-face{
+    font-family: "Ubuntu" ;
+    src: url(https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap)
 }
 
-h1, h2, h3 {
+body {
+    font-family: Ubuntu, Helvetica Neue, sans-serif;
+    background-color: #efefda;
+    background-image: url(../img/duckycodeup.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+
+}
+
+h2, h3 {
     color: #056d05;
+
 }
 h1 {
+    color: #285a28;
     border-bottom: 2px solid black;
+    font-size: 2.1em;
 }
 
 aside {
@@ -16,4 +28,29 @@ aside {
 
 .bottom-border {
     border-bottom: 2px solid black;
+}
+
+ul {
+    list-style: square;
+}
+
+q {
+    font-weight: bold;
+}
+/*descendant selector*/
+section p {
+    color: #212020;
+}
+
+a:link {
+    color: rebeccapurple;
+}
+a:visited {
+    color: cadetblue;
+}
+a:hover {
+    color: darkturquoise;
+}
+a:active {
+    color: greenyellow;
 }

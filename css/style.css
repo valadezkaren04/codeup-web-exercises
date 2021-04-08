@@ -1,4 +1,40 @@
 
-.fancy-header {
-    color: purple;
+
+h1 {
+    color: #4e607e;
+    text-align: center;
+    text-decoration: underline solid black;
+}
+header,.bottom-border {
+    border-bottom: 1px solid #0c173b;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: #f1f0f0;
+    background-image: url(../img/background1.jpg);
+}
+
+ul {
+    list-style: square;
+}
+table, th, td {
+    border: 1px solid #211f1f;
+    border-collapse: collapse;
+    width: 40%;
+    text-align: center;
+
+}
+
+
+a:link {
+    color: #4848a5;
+}
+a:visited {
+    color: #4e607e;
+}
+a:hover {
+    color: #285051;
+}
+a:active {
+    color: #4f2e36;
 }
