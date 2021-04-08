@@ -1,36 +1,60 @@
 
 
 h1 {
-    color: #4e607e;
+    color: #5f80cb;
     text-align: center;
-    text-decoration: underline solid black;
+    background-color: #d4d4d4;
+    text-decoration: underline solid #b0b3b3;
+}
+header {
+    text-align: center;
 }
 header,.bottom-border {
     border-bottom: 1px solid #0c173b;
+    color: whitesmoke;
 }
 body {
     font-family: 'Work Sans', sans-serif;
-    background-color: #f1f0f0;
-    background-image: url(../img/background1.jpg);
+    background-color: #e8effc;
+   /* background-image: url(../img/duckycodeup.png); */
+    background-image: url(../img/pexels-daniel-absi-952670.jpg);
+    background-position: center;
+    color: #e9f0f5;
 }
 
 ul {
     list-style: square;
 }
+
+/*table css*/
 table, th, td {
+    color: whitesmoke;
     border: 1px solid #211f1f;
     border-collapse: collapse;
-    width: 40%;
     text-align: center;
-
+    padding: 2px;
+}
+table {
+    width: 35%;
+}
+td {
+    height: 35px;
+}
+th, td {
+    padding: 10px;
+}
+th {
+    background-color: #628f8f;
+    color: white;
 }
 
+/*.......*/
 
 a:link {
-    color: #4848a5;
+    color: #e2e2ef;
 }
 a:visited {
-    color: #4e607e;
+    color: #a9b1bc;
 }
 a:hover {
     color: #285051;
