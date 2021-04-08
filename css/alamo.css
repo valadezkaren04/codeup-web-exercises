@@ -1,0 +1,19 @@
+body {
+    font-family: sans-serif;
+    background-color: #efefda;
+}
+
+h1, h2, h3 {
+    color: #056d05;
+}
+h1 {
+    border-bottom: 2px solid black;
+}
+
+aside {
+    font-family: serif;
+}
+
+.bottom-border {
+    border-bottom: 2px solid black;
+}
