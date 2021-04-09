@@ -39,7 +39,8 @@ fieldset {
 
 .form-group {
     width: 100%;
-    margin: .5em;
+    margin-top: .5em;
+    margin-bottom: .5em;
     /* This element must use 100% of the width */
     /* It should have a separation of .5em from elements on top of it and below it*/
 }
@@ -74,7 +75,7 @@ fieldset {
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: 100%;
+    width: calc(100% - 8px);
 }
 
 
