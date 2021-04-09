@@ -46,6 +46,7 @@ fieldset {
 }
 
 .form-label {
+    font-weight: bold;
     /* The text of a label must be bold */
 }
 
@@ -57,6 +58,8 @@ fieldset {
 .btn {
     padding: 8px;
     border: 1px lightgrey;
+    color: white;
+    font-weight: bold;
     /* There must be a separation of 8px between the text and the border of this element */
     /* The text color of this element should be white and bold */
     /* The border of this element should be 1px, and its color should be light grey */
