@@ -5,21 +5,29 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
-body {
+.message {
+    padding: 2px;
+    margin: 5px;
+    text-align: left;
+    border: 2px solid #d6d6d6;
 
 }
+.message-info {
+    background: #c3d3f2;
+    color: #111112;
+
+
+}
+
 .message-success {
+    background: #c4e7cf;
+}
+
+.message-warning {
+    background: #efeebf;
 
 }
 
 .message-error {
-
-}
-
-.message-info {
-
-}
-
-.message-warning {
-
+    background: #edc8cb;
 }
