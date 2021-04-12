@@ -1,9 +1,13 @@
+/*:root {*/
+/*    --bg-success: #c4e7cf;*/
+/*    --text-success: #126330;*/
+/*}*/
 body, html {
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
-    font-family: Arial, Ubuntu, sans-serif;
+    font-family: Ubuntu, Arial, sans-serif;
 }
 .message {
     padding: 4px;
@@ -22,7 +26,6 @@ body, html {
     padding-top: 5px;
     padding-bottom: 5px;
 
-
 }
 
 .message-success {
@@ -30,6 +33,9 @@ body, html {
     color: #126330;
     padding-top: 5px;
     padding-bottom: 5px;
+
+    /*background: var(--bg-success);*/
+    /*color: var(--text-success);*/
 }
 
 .message-warning {

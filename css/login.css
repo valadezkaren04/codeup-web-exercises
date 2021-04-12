@@ -58,7 +58,7 @@ fieldset {
 
 .btn {
     padding: 8px;
-    border: 1px lightgrey;
+    border: 1px solid lightgrey;
     color: white;
     font-weight: bold;
     /* There must be a separation of 8px between the text and the border of this element */
@@ -80,6 +80,7 @@ fieldset {
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
     width: calc(100% - 4px);
+    border-width: 2px;
 }
 
 
