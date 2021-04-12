@@ -11,6 +11,9 @@ body, html {
     text-align: left;
     border: 2px solid #d6d6d6;
     border-radius: 10px;
+    webkit-box-shadow: 3px 3px 1px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 1px 0 rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 1px 0 rgba(0,0,0,0.75);
 
 }
 .message-info {
