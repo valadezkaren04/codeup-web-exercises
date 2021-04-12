@@ -6,7 +6,7 @@ body, html {
     font-family: Arial, Ubuntu, sans-serif;
 }
 .message {
-    padding: 2px;
+    padding: 4px;
     margin: 5px;
     text-align: left;
     border: 2px solid #d6d6d6;
@@ -14,20 +14,29 @@ body, html {
 }
 .message-info {
     background: #c3d3f2;
-    color: #111112;
+    color: #3c3490;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
 
 }
 
 .message-success {
     background: #c4e7cf;
+    color: #126330;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .message-warning {
     background: #efeebf;
+    color: #9d8e3d;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
 }
 
 .message-error {
     background: #edc8cb;
+    color: #8c3446;
 }
