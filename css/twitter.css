@@ -48,14 +48,12 @@ a {
 .nav-link:hover {
     color: var(--link-color);
 }
-#container {
-    margin: 2em;
 
-}
 .profile {
     height: 80px;
     background: var(--light-bg);
 }
+
 .profile-image {
     position: absolute;
     top: 235px;
@@ -69,7 +67,13 @@ a {
   width: calc(25% - 1em);
   margin: 0 .5em;
 }
-
+.profile-items {
+    list-style: none;
+    padding: 0;
+}
+.profile-entry {
+    margin: .5em;
+}
 .timeline {
   float: left;
   width: calc(50% - 1em);
@@ -105,13 +109,13 @@ a {
 }
 .media {
     width: 100%;
-    background: var(--light-bg);
+    background-color: var(--light-bg);
     border-bottom: 1px solid var(--separator-color);
     padding: .5em;
     overflow: auto;
 }
 .media-image {
-    width: 50px;
+    max-width: 50px;
     float: left;
     margin-top: 1.33em;
 }
