@@ -7,34 +7,40 @@
     /*font-weight: bold;*/
 
 }
-header {
+nav {
+
     background: grey;
     color: black;
     /*padding: 0;*/
 
 }
 
-.top-nav {
+nav ul {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    list-style: none;
 
 
 }
 nav a {
     display: inline-block;
-    color: black;
     text-decoration: none;
-    padding: .5em;
+    padding: .4em;
+    color: black;
 
 
 }
 .main-logo {
+    flex-basis: 25%;
     display: flex;
-    align-items: center;
     font-size: 3em;
+    padding-right: .5em;
     padding-top: .2em;
     padding-bottom: .2em;
-    margin: auto;
+    margin: 0 auto;
+
 }
 
 a:hover {
