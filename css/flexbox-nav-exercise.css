@@ -4,7 +4,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    /*font-weight: bold;*/
+    font-weight: bold;
 
 }
 nav {
@@ -27,7 +27,7 @@ nav ul {
 nav a {
     display: inline-block;
     text-decoration: none;
-    padding: .4em;
+    padding: .3em;
     color: black;
 
 
@@ -36,7 +36,7 @@ nav a {
     flex-basis: 25%;
     display: flex;
     font-size: 3em;
-    padding-right: .5em;
+    /*padding-left: 15px;*/
     padding-top: .2em;
     padding-bottom: .2em;
     margin: 0 auto;
