@@ -1,0 +1,8 @@
+.bg-pizza {
+    background-image: url("../img/pizzabckg.png");
+    background-size: cover;
+}
+
+.opaque-bg {
+    background: rgba(255, 252, 252, 0.7);
+}
