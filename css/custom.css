@@ -6,6 +6,8 @@
 .opaque-bg {
     background: rgba(255, 252, 252, 0.7);
     text-align: center;
+    max-width: 100%;
+
 
 }
 h1 {
