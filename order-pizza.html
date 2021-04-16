@@ -24,21 +24,54 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" placeholder="Zipcode" aria-label="zipcode">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>
-<!--HEADER-->
-<div class="container-fluid">
+<!--HEADER/PIZZA BACKGROUND-->
     <div class="jumbotron jumbotron-fluid bg-pizza">
         <div class="container opaque-bg text-dark">
             <h1 class="display-4">Welcome to Pizza World!</h1>
-            <!--        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
+<!--                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>-->
         </div>
-</div>
-
-
-</div>
+    </div>
+<!--MAIN CONTENT-->
+<main class="container-fluid">
+    <h2>Build your own pizza!</h2>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="size-crust-tab" data-toggle="tab" href="#" >Size and Crust</a>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="cheese-sauce-tab" data-toggle="tab" href="#" role="tab" aria-controls="cheese-sauce" aria-selected="true">Cheese and Sauce</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="toppings-tab" data-toggle="tab" href="#" role="tab" aria-controls="toppings" aria-selected="true">Toppings</a>
+        </li>
+    </ul>
+<!--SIZE AND CRUST TAB-->
+    <div class="tab-pane fade" id="size-crust" role="tabpanel" aria-labelledby="size-crust-tab">
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <input type="radio" name="size-crust" id="small">
+                    <label for="small">small</label>
+                </li>
+                <li class="list-group-item">
+                    <input type="radio" name="size-crust" id="medium">
+                    <label for="medium">Medium</label>
+                </li>
+                <li class="list-group-item">
+                    <input type="radio" name="size-crust" id="large">
+                    <label for="large">Large</label>
+                </li>
+                <li class="list-group-item">
+                    <input type="radio" name="size-crust" id="xlarge">
+                    <label for="xlarge">X-Large</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
 </body>
 </html>

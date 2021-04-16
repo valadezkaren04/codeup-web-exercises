@@ -1,8 +1,13 @@
-.bg-pizza {
+.jumbotron {
     background-image: url("../img/pizzabckg.png");
-    background-size: cover;
+    width: 100%;
 }
 
 .opaque-bg {
     background: rgba(255, 252, 252, 0.7);
+    text-align: center;
+
+}
+h1 {
+    width: 100%
 }
