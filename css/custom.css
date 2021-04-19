@@ -1,9 +1,6 @@
 * {
     box-sizing: border-box;
 }
-#container {
-
-}
 
 .jumbotron {
     background-image: url("../img/pizzabckg.png");
@@ -29,8 +26,12 @@ body {
 }
 
 h2 {
+    /*background-image: url("../img/blackbckg.jpg");*/
     color: #ffffff;
-    margin: 25px;
+    padding: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+
 }
 
 
