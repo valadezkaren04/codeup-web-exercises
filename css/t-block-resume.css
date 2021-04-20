@@ -1,4 +1,14 @@
-#resume-hr {
-    border-bottom: #3f9d03 solid 6px;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
 
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+hr {
+    border-bottom: green solid 5px;
+
+}
+h4, h3, h1, h2 {
+    font-family: 'Titillium Web', sans-serif;
 }
