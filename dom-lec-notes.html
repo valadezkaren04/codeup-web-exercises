@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marvel vs. DC</title>
+<!--    css-->
+    <style>
+        .hotpink {
+            color: hotpink;
+        }
+    </style>
+<!--    css ends-->
+</head>
+<body>
+    <p id="like">I like</p>
+    <p id="dontlike">I don't like</p>
+    <p id="marvel">Marvel</p>
+    <p id="dc">DC</p>
+<form name = "changeColor">
+    <label for="colorPreference">Enter your color</label>
+    <input type="text" name="colorPreference" id="colorPreference">
+    <input type="button" id="colorSubmission" value="Submit">
+</form>
+    <script>
+       var accesTheDOM = document.getElementById('dc'); // grabbed element first. Then stored the var with element
+        var showMe = accesTheDOM.innerHTML; //reference to the content
+        alert(showMe); //passed the var with content of the element
+
+        // What’s a common situation for this code?
+        // Saving the value of inputs, DOM events, changing content, ect. This is how we change things dynamically
+    </script>
+
+    <p id="theHulk" data-state="The Hulk" data-strength="super"
+       data-intelligence="low">The Hulk</p>
+    <button id="transformHulk">Trandform Hulk</button>
+    <script src="js/dom-lec-notes.js"></script>
+
+</body>
+</html>
