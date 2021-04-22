@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browser Object Model Lecture Notes</title>
+</head>
+<body>
+<script>
+
+    // var count = 0;
+    // function hey() {
+    //     console.log('hey ' + count);
+    //     count = count + 1;
+    // }
+
+// BROWSER KEEPS CHECKING IF IT'S LESS THAN 10 BUT DOESNT STOP, THEREFORE DOESN'T WORK TO MAKE IT STOP
+//     var count = 0;
+//     function hey() {
+//         if (count < 10) {
+//             console.log('hey ' + count);
+//             count = count + 1;
+//        }
+//     }
+
+    // tells the browser that setInterval is what will make it stop
+    var count;
+    var thisWillStop;
+    thisWillStop = setInterval(hey, 1000);
+    function hey() {
+        if (count < 10) {
+            console.log('hey ' + count);
+            count = count + 1;
+        } else {
+            clearInterval(thisWillStop)
+        }
+    }
+    thisWillStop = clearInterval(thisWillStop);
+</script>
+
+</body>
+</html>
