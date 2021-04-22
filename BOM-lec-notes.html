@@ -35,6 +35,30 @@
         }
     }
     thisWillStop = clearInterval(thisWillStop);
+
+    //another form of syntax
+    // var count;
+    // var thisWillStop = setInterval(function () {
+    //      if (count < 10) {
+    //           console.log('hey ' + count);
+    //           count = count + 1;
+    //      } else {
+    //          clearInterval(thisWillStop)
+    //      }
+    // }, 1000);
+
+    'use strict';
+
+    var delay = 5000; // delay time in milliseconds
+
+    var timeoutId = setTimeout(function () {
+        alert('Here is a delayed hello!');
+    }, delay);
+
+    // to cancel the timeout, you can call
+    // clearTimeout(timeoutId);
+    // prior to the delay expiring
+
 </script>
 
 </body>
