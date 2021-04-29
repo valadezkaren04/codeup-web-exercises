@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery selectors notes</title>
+
+    <!--        WILL NOT WORK HERE UNLESS USING .onload-->
+<!--    <script src="js/jquery-3.6.0.js"></script>-->
+    <script>
+        // function init(){
+        //   $("#changes").css("color", "hotpink");
+        // }
+        // window.onload = init;
+        // $("#changes").css("color", "hotpink");
+        // $(document).ready(function(){
+        //   $("#hotPink").click(function(){
+        //     $("#changes").css("color", "hotpink");
+        //   });
+        // });
+    </script>
+</head>
+<body>
+<h1>jQuery Selectors</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto atque autem corporis delectus distinctio dolorem
+    ducimus est impedit inventore ipsam itaque iure nemo neque, officiis possimus quibusdam quisquam, sit,
+    voluptatum!</p>
+<h2 id="id-selectors">ID selectors</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus corporis dolor et eum fugiat numquam perferendis
+    qui tenetur ullam, voluptatibus? Aliquid architecto debitis excepturi exercitationem ipsam non porro quam
+    voluptas.</p>
+<h2 class="class-selectors">Class selectors</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet asperiores assumenda cumque deleniti
+    doloremque eaque eveniet fuga, in maxime modi molestiae mollitia numquam perferendis perspiciatis, praesentium sunt
+    tenetur, velit.</p>
+<h2>Generic element</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem ea, earum facere id in iusto libero minus
+    obcaecati perspiciatis quos reiciendis repellat suscipit tempore velit veniam veritatis vitae voluptatem?</p>
+<button id="hotPink">Hot Pink</button>
+<p id="change">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto consequatur culpa deserunt dolore
+    et eum explicabo facilis, ipsa iste itaque labore mollitia nam optio praesentium quas, sed unde voluptatum!</p>
+
+<!--jQuery script tags-->
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"-->
+<!--        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+
+<script src="js/jquery-3.6.0.js"></script>
+
+<!--JS-->
+<script>
+    jQuery("#id-selectors").html("I am the chosen one"); //changed the "ID Selectors" h2 to "I am the chosen one"// $ is shorthand for jQuery
+    $(".class-selectors").css("font-family", "sans-serif"); //changes the font of the class class-selectors // we can access all elements of a particular type using the tag selector
+
+    // var pwn = "you've been pwned"
+    //     for (var i = 0; i < 15; i++) {
+    //         pwn = pwn + " you've been pwned";
+    //     }
+    //     $("p").html(pwn);
+
+    // function pwned(num) {
+    //     var pwn = "you've been pwned"
+    //     for (var i = 0; i < num; i++) {
+    //         pwn = pwn + " you've been pwned";
+    //     }
+    //    return pwn;
+    // }
+    // $("p").html(pwned(50));
+
+    // you can select lists of elements
+    $("h1, h2, p").html("I've taken back my computer");
+
+    // you can use the universal selector ; selects every single element on the page
+    $("*").css("font-style", "italic");
+
+    // you can use more advanced css selectors //changes only the h1 and p
+    $("h1 + p").html("NOPE, you're still pwned :P");
+</script>
+
+<script src="js/jquery-3.6.0.js"></script>
+<script>$("#changes").css("color", "hotpink");</script>
+
+
+</body>
+</html>
