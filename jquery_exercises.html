@@ -6,13 +6,13 @@
 </head>
 <body>
 <h1 id="bts">BTS</h1>
-<p class="intro">Cake powder bonbon candy candy cupcake. Dragée lollipop ice cream I love toffee I love. I love tiramisu tart bonbon wafer. Liquorice macaroon croissant chocolate bar candy tiramisu tiramisu macaroon.
+    <p class="codeup">Cake powder bonbon candy candy cupcake. Dragée lollipop ice cream I love toffee I love. I love tiramisu tart bonbon wafer. Liquorice macaroon croissant chocolate bar candy tiramisu tiramisu macaroon.
     Chocolate cake jujubes cake I love jelly-o cake macaroon. Dessert I love croissant I love apple pie dragée. Biscuit chocolate pudding gingerbread tootsie roll oat cake tiramisu biscuit.</p>
 <h2 >About BTS</h2>
-<div class="aboutBts">Cake powder bonbon candy candy cupcake. Dragée lollipop ice cream I love toffee I love. I love tiramisu tart bonbon wafer. Liquorice macaroon croissant chocolate bar candy tiramisu tiramisu macaroon.
+<div id="aboutBts">Cake powder bonbon candy candy cupcake. Dragée lollipop ice cream I love toffee I love. I love tiramisu tart bonbon wafer. Liquorice macaroon croissant chocolate bar candy tiramisu tiramisu macaroon.
     Chocolate cake jujubes cake I love jelly-o cake macaroon. Dessert I love croissant I love apple pie dragée. Biscuit chocolate pudding gingerbread tootsie roll oat cake tiramisu biscuit.</div>
 <h2>Members</h2>
-<ul id="btsMembers">
+<ul class="btsMembers">
     <li>Kim Nam Joon</li>
     <li>Kim Seok Jin</li>
     <li>Min Yoon Gi</li>
@@ -21,8 +21,39 @@
     <li>Kim Tae Hyung</li>
     <li>Jeon Jung Kook</li>
 </ul>
+<p class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur blanditiis, consequatur est, fugit, inventore ipsa necessitatibus nesciunt numquam porro quas recusandae tempora veritatis vitae voluptates. A cupiditate in voluptas.</p>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    // Id Selectors
+
+    // var theContent = $("#aboutBts").html();
+    // alert(theContent);
+    //
+    // var contentTwo = $("#bts").html();
+    // alert(contentTwo);
+
+    //Class Selectors
+
+    // $(".codeup").css("border", "1px solid red");
+
+    //Element Selectors
+
+    $("li").css("font-size", "20px");
+    $("h1, p, li").css("background-color", "rgba(250,237,155, 0.4)")
+
+    $("h1 + p").each(function(){
+        alert($(this).text())
+    });
+
+    //Multiple Selectors
+
+    $("h1").click(function() {
+        $(this).css("background-color", "purple")
+    });
+
+
+</script>
 </body>
 </html>
