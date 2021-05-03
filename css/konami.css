@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
 body {
+    font-family: 'New Rocker', cursive;
     background-image: url("../img/entrance-log-bg.jpeg");
     background-size: cover;
 
@@ -7,4 +10,11 @@ body {
 h2 {
     color: darkred;
     text-align: center;
+}
+
+.tanjiro {
+    height: 250px;
+    width: auto;
+    float: right;
+    margin-top: 275px;
 }

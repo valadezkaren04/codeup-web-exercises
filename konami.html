@@ -5,14 +5,17 @@
     <title>Konami Code</title>
     <link rel="stylesheet" href="css/konami.css">
 </head>
-<body>
+<body id="main-content">
 <header>
     <h2>You must perform your battle style in order to become a demon slayer</h2>
+
     <audio class="battle-audio" controls="controls" autoplay="autoplay">
         <source src="audio/battle-audio.mp3">
         Your browser does not support the HTML5 Audio element.
     </audio>
 </header>
+
+<img class="tanjiro" src="img/tanjiro-kamado-solo.png" alt="tanjiro kamado">
 
 
 <!--KONAMI-->
@@ -40,16 +43,16 @@
     }
 
     konamiCodeOn(function () {
-        alert('You have performed your battle style. welcome, fellow demon slayer.')
+        alert('You have performed your battle style. Welcome fellow demon slayer.')
+
         document.body.style.backgroundImage = "url('img/firebreath.gif')";
+
+
         $("audio").attr("src", "audio/intro-demon-slayer.mp3").autoplay;
 
-
-        // var audio = new Audio('audio/intro-demon-slayer.mp3');
-        // audio.play();
-
         $("h2").hide();
-        // $(".battle-audio").hide();
+        $(".tanjiro").hide();
+
 
     });
 
