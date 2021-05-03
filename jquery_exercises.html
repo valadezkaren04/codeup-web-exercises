@@ -9,8 +9,8 @@
     <p class="codeup">Cake powder bonbon candy candy cupcake. Dragée lollipop ice cream I love toffee I love. I love tiramisu tart bonbon wafer. Liquorice macaroon croissant chocolate bar candy tiramisu tiramisu macaroon.
     Chocolate cake jujubes cake I love jelly-o cake macaroon. Dessert I love croissant I love apple pie dragée. Biscuit chocolate pudding gingerbread tootsie roll oat cake tiramisu biscuit.</p>
 <h2 >About BTS</h2>
-<div id="aboutBts">Cake powder bonbon candy candy cupcake. Dragée lollipop ice cream I love toffee I love. I love tiramisu tart bonbon wafer. Liquorice macaroon croissant chocolate bar candy tiramisu tiramisu macaroon.
-    Chocolate cake jujubes cake I love jelly-o cake macaroon. Dessert I love croissant I love apple pie dragée. Biscuit chocolate pudding gingerbread tootsie roll oat cake tiramisu biscuit.</div>
+<p id="aboutBts">Cake powder bonbon candy candy cupcake. Dragée lollipop ice cream I love toffee I love. I love tiramisu tart bonbon wafer. Liquorice macaroon croissant chocolate bar candy tiramisu tiramisu macaroon.
+    Chocolate cake jujubes cake I love jelly-o cake macaroon. Dessert I love croissant I love apple pie dragée. Biscuit chocolate pudding gingerbread tootsie roll oat cake tiramisu biscuit.</p>
 <h2>Members</h2>
 <ul class="btsMembers">
     <li>Kim Nam Joon</li>
@@ -55,10 +55,25 @@
 
     //Multiple Selectors
 
+    // $("h1").click(function() {
+    //     $(this).css("background-color", "purple")
+    // });
+
+    //Mouse Events Exercises
+
     $("h1").click(function() {
-        $(this).css("background-color", "purple")
+        $(this).css("background-color", "purple");
     });
 
+    $("p").dblclick(function () {
+        $(this).css({"font-size": "18px"});
+    });
+
+    $("li").hover(function () {
+        $(this).css("color", "red");
+    }, function (){
+        $(this).css("color", "black");
+    });
 
 </script>
 </body>
