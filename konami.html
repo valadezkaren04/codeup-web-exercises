@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="css/konami.css">
 </head>
 <body>
-<h2> You must perform your battle style in order to become a demon slayer</h2>
-
-
+<header>
+    <h2>You must perform your battle style in order to become a demon slayer</h2>
+</header>
 
 <!--KONAMI-->
 <script src="js/jquery-3.6.0.js"></script>
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
-    });
+    // $(document).keyup(function (event) {
+    //     console.log(event.keyCode);
+    // });
 
-    //konami code is Up, Up, Down, Down, Left, Right, Left, Right, B, A
+    //konami code: Up (38), Up(38), Down(40), Down(40), Left(37), Right(39), Left(37), Right(39), B(66), A(65)
 
-    function onKonamiCode(callBack) {
+    function konamiCodeOn(callBack) {
         var input = '';
         var key = '38384040373937396665';
         document.addEventListener('keydown', function (e) {
@@ -34,37 +34,19 @@
         });
     }
 
-    onKonamiCode(function () {
+    konamiCodeOn(function () {
         alert('You have performed your battle style')
+        document.body.style.backgroundImage = "url('img/firebreath.gif')";
+        var audio = new Audio('audio/intro-demon-slayer.mp3');
+        audio.play();
+        $("h2").hide()
+
     });
-
-
 
 
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!--// a key map of allowed keys-->
