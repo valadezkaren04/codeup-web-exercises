@@ -8,7 +8,12 @@
 <body>
 <header>
     <h2>You must perform your battle style in order to become a demon slayer</h2>
+    <audio class="battle-audio" controls="controls" autoplay="autoplay">
+        <source src="audio/battle-audio.mp3">
+        Your browser does not support the HTML5 Audio element.
+    </audio>
 </header>
+
 
 <!--KONAMI-->
 <script src="js/jquery-3.6.0.js"></script>
@@ -35,11 +40,16 @@
     }
 
     konamiCodeOn(function () {
-        alert('You have performed your battle style')
+        alert('You have performed your battle style. welcome, fellow demon slayer.')
         document.body.style.backgroundImage = "url('img/firebreath.gif')";
-        var audio = new Audio('audio/intro-demon-slayer.mp3');
-        audio.play();
-        $("h2").hide()
+        $("audio").attr("src", "audio/intro-demon-slayer.mp3").autoplay;
+
+
+        // var audio = new Audio('audio/intro-demon-slayer.mp3');
+        // audio.play();
+
+        $("h2").hide();
+        // $(".battle-audio").hide();
 
     });
 
