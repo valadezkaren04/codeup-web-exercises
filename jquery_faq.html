@@ -49,18 +49,17 @@
     <dd>Until 1968, the only Federal role in trails was to build and maintain those on Federal lands. The National Trails System Act of 1968 made it Federal policy to recognize and promote trails by providing financial assistance, support of volunteers, coordination with States, and other authorities.</dd>
 
 </dl>
-
+<p><a href="#">invisibility cloak</a></p>
 <!--jQUERY-->
 <script src="js/jquery-3.6.0.js"></script>
 <script>
+
     // $("dd").addClass("invisible");
 
-    $("dd").mouseover(function() {
-        $(this).toggleClass("invisible");
+    $("a").click(function() {
+        $("dd").toggleClass("invisible");
     });
-    $("dd").mouseleave(function() {
-        $("dd").removeClass("invisible");
-    });
+
 
     //BONUS
     $("dt").click(
