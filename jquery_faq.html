@@ -19,53 +19,130 @@
 
 <dl>
     <dt>Who is the director of the National Park Service?</dt>
-    <dd>Shawn Benge, Deputy Director, Operations, is exercising the delegated authority of the Director of the National Park Service.</dd>
+    <dd>Shawn Benge, Deputy Director, Operations, is exercising the delegated authority of the Director of the National
+        Park Service.
+    </dd>
 
     <dt>How old is the National Park System?</dt>
-    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the National Park System</dd>
+    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916.
+        Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as
+        the nation's first national park. View the National Park System
+    </dd>
 
     <dt>How many people visit the national parks?</dt>
     <dd>otal recreation visitors to the national parks in 2019: 327,516,619.</dd>
 
     <dt>How did Yellowstone get its name?</dt>
-    <dd>Yellowstone National Park is named after the Yellowstone River, the major river running through the park. According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe, who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock Yellow River.”</dd>
+    <dd>Yellowstone National Park is named after the Yellowstone River, the major river running through the park.
+        According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe,
+        who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock
+        Yellow River.”
+    </dd>
 
     <dt>What is the difference between a national park and a national forest?</dt>
-    <dd>National parks are administered by the Department of the Interior and national forests by the Department of Agriculture. The National Park Service is mandated to preserve resources unimpaired, while the Forest Service is mandated to wisely manage resources for many sustainable uses. Six national forests surround Yellowstone National Park.</dd>
+    <dd>National parks are administered by the Department of the Interior and national forests by the Department of
+        Agriculture. The National Park Service is mandated to preserve resources unimpaired, while the Forest Service is
+        mandated to wisely manage resources for many sustainable uses. Six national forests surround Yellowstone
+        National Park.
+    </dd>
 
     <dt>How do you become a park ranger?</dt>
-    <dd>Many National Park Service employees begin their careers as volunteers or as seasonal employees. Hiring is very competitive and is conducted through the Office of Personnel Management.</dd>
+    <dd>Many National Park Service employees begin their careers as volunteers or as seasonal employees. Hiring is very
+        competitive and is conducted through the Office of Personnel Management.
+    </dd>
 
     <dt>What is the highest peak in Yellowstone?</dt>
     <dd>Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
 
     <dt>Why is Yellowstone called a biosphere reserve and a world heritage site?</dt>
-    <dd>The United Nations designated Yellowstone National Park as a biosphere reserve and a world heritage site in recognition of the worldwide significance of its natural and cultural resources.</dd>
+    <dd>The United Nations designated Yellowstone National Park as a biosphere reserve and a world heritage site in
+        recognition of the worldwide significance of its natural and cultural resources.
+    </dd>
 
     <dt>What is a "national trail?"</dt>
-    <dd>National trails are officially established under the authorities of the National Trails System Act (16 USC 1241-51).</dd>
+    <dd>National trails are officially established under the authorities of the National Trails System Act (16 USC
+        1241-51).
+    </dd>
 
     <dt>What is the federal governments role with National Trails?</dt>
-    <dd>Until 1968, the only Federal role in trails was to build and maintain those on Federal lands. The National Trails System Act of 1968 made it Federal policy to recognize and promote trails by providing financial assistance, support of volunteers, coordination with States, and other authorities.</dd>
 
+    <dd>Until 1968, the only Federal role in trails was to build and maintain those on Federal lands. The National
+        Trails System Act of 1968 made it Federal policy to recognize and promote trails by providing financial
+        assistance, support of volunteers, coordination with States, and other authorities.
+    </dd>
 </dl>
+
 <p><a href="#">invisibility cloak</a></p>
+
+
+<h3>Hot Springs</h3>
+<ul>
+    <li>Hot Springs National Park covers a total area of 5,550 acres</li>
+    <li>The highest elevation found in Hot Springs is 1,405 feet on Music Mountain</li>
+    <li>There is no entrance fee for Hot Springs National Park</li>
+    <li>Native Americans referred to the hot springs at Hot Springs National Park as 'Valley of the Vapors'.</li>
+</ul>
+
+<h3>Grand Canyon</h3>
+<ul>
+    <li>From the rim of the canyon to its lowest point, the temperature can change by more than 25 degrees.</li>
+    <li>There are an estimated 1,000 caves within the canyon, but only 335 have been recorded. Only one cave is open to
+        the public.
+    </li>
+    <li>he Grand Canyon Pink Rattlesnake is only found in the Grand Canyon, and is one of six rattlesnake species that
+        live within park boundaries.
+    </li>
+    <li>The air at the Grand Canyon is among the cleanest air in the United States. Take a deep breath! The elevation of
+        the South Rim is around 7,000 feet (2133m) above seal level.
+    </li>
+</ul>
+
+<h3>Alcatraz Island</h3>
+<ul>
+    <li>Cells were smaller than a closet: In B & C blocks, the cells were 5 feet by 9 feet, with a sleeping cot, a
+        toilet, and a small sink (cold running only).
+    </li>
+    <li>The guards and officers lived on the island with their spouses and children. There's even an Alumni Association
+        for folks who grew up there.
+    </li>
+    <li>It was never full: The average number of prisoners was 260, but as few as 222 and as many as 320.</li>
+    <li>There are reported paranormal occurrences, including one that suggests Al Capone might be among its "haunts."
+    </li>
+</ul>
+
+<button>highlight last list item</button>
 <!--jQUERY-->
 <script src="js/jquery-3.6.0.js"></script>
 <script>
 
     // $("dd").addClass("invisible");
 
-    $("a").click(function() {
+    $("a").click(function () {
         $("dd").toggleClass("invisible");
     });
 
 
     //BONUS
     $("dt").click(
-        function(){
+        function () {
             $(this).addClass("highlight");
         });
+
+
+    //Traversing exercises
+
+    $("button").click(function () {
+        $("li").last().css("background-color", "cornsilk");
+    });
+
+    $("h3").click(function() {
+        $("li").css("font-weight", "bold");
+    });
+
+    $("li").click(function() {
+        $("ul li").first().css("color", "blue");
+    });
+
 </script>
 
 </body>
