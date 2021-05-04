@@ -3,12 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>jQuery FAQ exercise</title>
+
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlight {
+            background-color: #cbfdcb;
+        }
+    </style>
 </head>
 <body>
+<h1>10 FAQs about national parks:</h1>
 
+<dl>
+    <dt>Who is the director of the National Park Service?</dt>
+    <dd>Shawn Benge, Deputy Director, Operations, is exercising the delegated authority of the Director of the National Park Service.</dd>
+
+    <dt>How old is the National Park System?</dt>
+    <dd>The National Park Service was created by an act signed by President Woodrow Wilson on August 25, 1916. Yellowstone National Park was established by an act signed by President Ulysses S. Grant on March 1, 1872, as the nation's first national park. View the National Park System</dd>
+
+    <dt>How many people visit the national parks?</dt>
+    <dd>otal recreation visitors to the national parks in 2019: 327,516,619.</dd>
+
+    <dt>How did Yellowstone get its name?</dt>
+    <dd>Yellowstone National Park is named after the Yellowstone River, the major river running through the park. According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe, who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock Yellow River.”</dd>
+
+    <dt>What is the difference between a national park and a national forest?</dt>
+    <dd>National parks are administered by the Department of the Interior and national forests by the Department of Agriculture. The National Park Service is mandated to preserve resources unimpaired, while the Forest Service is mandated to wisely manage resources for many sustainable uses. Six national forests surround Yellowstone National Park.</dd>
+
+    <dt>How do you become a park ranger?</dt>
+    <dd>Many National Park Service employees begin their careers as volunteers or as seasonal employees. Hiring is very competitive and is conducted through the Office of Personnel Management.</dd>
+
+    <dt>What is the highest peak in Yellowstone?</dt>
+    <dd>Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>
+
+    <dt>Why is Yellowstone called a biosphere reserve and a world heritage site?</dt>
+    <dd>The United Nations designated Yellowstone National Park as a biosphere reserve and a world heritage site in recognition of the worldwide significance of its natural and cultural resources.</dd>
+
+    <dt>What is a "national trail?"</dt>
+    <dd>National trails are officially established under the authorities of the National Trails System Act (16 USC 1241-51).</dd>
+
+    <dt>What is the federal governments role with National Trails?</dt>
+    <dd>Until 1968, the only Federal role in trails was to build and maintain those on Federal lands. The National Trails System Act of 1968 made it Federal policy to recognize and promote trails by providing financial assistance, support of volunteers, coordination with States, and other authorities.</dd>
+
+</dl>
 
 <!--jQUERY-->
 <script src="js/jquery-3.6.0.js"></script>
+<script>
+    // $("dd").addClass("invisible");
+
+    $("dd").mouseover(function() {
+        $(this).toggleClass("invisible");
+    });
+    $("dd").mouseleave(function() {
+        $("dd").removeClass("invisible");
+    });
+
+    //BONUS
+    $("dt").click(
+        function(){
+            $(this).addClass("highlight");
+        });
+</script>
 
 </body>
 </html>
