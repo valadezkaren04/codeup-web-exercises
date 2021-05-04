@@ -11,6 +11,10 @@
         .hotPinkIt {
             color: hotpink;
         }
+        ::selection {
+            background-color: mediumpurple;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -46,13 +50,21 @@
             }
         });
 
-        $("h2").mouseenter(function() {
+        // $("h2").mouseenter(function() {
+        //     $("h2").addClass("hotPinkIt");
+        // });
+        //
+        // $("h2").mouseleave(function() {
+        // });
+
+        $("h2").hover(function() {
             $("h2").addClass("highlight");
+            $("h2").addClass("hotPinkIt");
+        }, function() {
+            $("h2").removeClass("highlight");
+            $("h2").removeClass("hotPinkIt");
         });
 
-        $("h2").mouseleave(function() {
-            $("h2").addClass("hotPinkIt");
-        });
     </script>
 
 </body>
