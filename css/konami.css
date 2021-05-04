@@ -18,3 +18,10 @@ h2 {
     float: right;
     margin-top: 275px;
 }
+
+audio {
+    display: flex;
+    align-content: flex-end;
+
+
+}
