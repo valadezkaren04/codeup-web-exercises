@@ -12,6 +12,19 @@
         .highlight {
             background-color: #cbfdcb;
         }
+
+        img {
+            height: auto;
+            width: 200px;
+            border: darkgoldenrod solid 3px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #button1, #button2, #button3 {
+
+        }
     </style>
 </head>
 <body>
@@ -110,7 +123,20 @@
     </li>
 </ul>
 
-<button>highlight last list item</button>
+<button id="yellowBg">highlight last list item</button>
+
+<div id="container">
+
+    <div><img id="pic1" src="img/hot-springs.jpeg" alt="picture of hot springs national park"><button id="button1">switch</button></div>
+
+
+    <div><img id="pic2" src="img/grand-canyon.jpeg" alt="picture of grand canyon national park"><button id="button2">switch</button></div>
+
+
+    <div><img id="pic3" src="img/alcatraz.jpeg" alt="picture of alacatraz national park"><button id="button3">switch</button></div>
+
+</div>
+
 <!--jQUERY-->
 <script src="js/jquery-3.6.0.js"></script>
 <script>
@@ -131,17 +157,23 @@
 
     //Traversing exercises
 
-    $("button").click(function () {
-        $("li").last().css("background-color", "cornsilk");
+    $("#yellowBg").click(function() {
+        $("ul").each(function () {
+            $(this).children().last().css("background-color", "cornsilk");
+        });
     });
 
     $("h3").click(function() {
-        $("li").css("font-weight", "bold");
+        $(this).next().first().css("font-weight", "bold");
     });
 
     $("li").click(function() {
-        $("ul li").first().css("color", "blue");
+        $(this).parent().children().first().css("color", "blue");
     });
+
+    //BONUS
+
+
 
 </script>
 
