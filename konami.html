@@ -10,7 +10,7 @@
     <h2>You must perform your battle style in order to become a demon slayer</h2>
 
     <audio class="battle-audio" controls="controls" autoplay="autoplay">
-        <source src="audio/battle-audio.mp3">
+        <source src="audio/intro-demon-slayer.mp3">
         Your browser does not support the HTML5 Audio element.
     </audio>
 </header>
@@ -44,14 +44,28 @@
 
     konamiCodeOn(function () {
         alert('You have performed your battle style. Welcome fellow demon slayer.')
-
+        var video = $('<video />', {
+            id: 'video',
+            src: 'video/tanjiro-rui.mp4',
+            type: 'mp4',
+            controls: true,
+            autoplay: false,
+            muted: true,
+        });
+        video.appendTo($('body')).css({
+            'height': '90%',
+            'position': 'absolute',
+            'width': '100%',
+            'left': '0',
+            'object-fit': 'cover'
+        });
         document.body.style.backgroundImage = "url('img/firebreath.gif')";
 
-
-        $("audio").attr("src", "audio/intro-demon-slayer.mp3").autoplay;
+        $("audio").attr("src", "none");
 
         $("h2").hide();
         $(".tanjiro").hide();
+        $("audio").hide();
 
 
     });

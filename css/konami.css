@@ -3,7 +3,7 @@
 body {
     font-family: 'New Rocker', cursive;
     background-image: url("../img/entrance-log-bg.jpeg");
-    background-size: cover;
+    background-size: auto;
 
 }
 
