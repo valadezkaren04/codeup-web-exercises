@@ -4,7 +4,6 @@ body {
     font-family: 'New Rocker', cursive;
     background-image: url("../img/entrance-log-bg.jpeg");
     background-size: auto;
-
 }
 
 h2 {
@@ -22,6 +21,4 @@ h2 {
 audio {
     display: flex;
     align-content: flex-end;
-
-
 }
