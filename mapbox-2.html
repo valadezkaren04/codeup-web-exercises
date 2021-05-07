@@ -2,46 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MAPBOX API</title>
-<!--MAPBOX API-->
+    <title>New York</title>
+    <!--MAPBOX API-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
-<!---->
-
-    <style>
-        .popup-font {
-            font-family: Chalkboard, sans-serif;
-        }
-    </style>
+    <!---->
 </head>
 <body>
-<H3>Welcome to MapBox!</H3>
+<!--// Mini Exercise 2-->
+<!--// TODO: Create an HTML file called mapbox-2.html. In this file, create a map centered-->
+<!--// TODO: on New York with a marker on the Statue of Liberty. Add a popup to the Statue of-->
+<!--// TODO: Liberty marker with the text "Statue of Liberty".-->
+<!--// *BONUS - when the marker is dragged and released, display the coordinates in an H1.-->
+<h3>New York</h3>
 <div id='map' style='width: 400px; height: 300px;'></div>
+
 
 <script src="js/keys.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <script>
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
-        container: 'map', // container ID
-        //style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        //center: [-98.4916, 29.4252], // starting position [lng, lat]
-        //zoom: 12 // starting zoom
+        container: 'map'
     });
 
-    map.setStyle("mapbox://styles/mapbox/dark-v10");
-    map.setZoom(9);
-    map.setCenter([-98.4916, 29.4252]);
+    map.setStyle("mapbox://styles/mapbox/streets-v11");
+    map.setZoom(5);
+    map.setCenter([-74.2179, 43.2994]);
 
     console.log(map.getCenter());
 
     map.addControl(new mapboxgl.NavigationControl());
 
-//Marker Object
+    //Marker Object
 
     var marker = new mapboxgl.Marker({
-        color: 'red',
+        color: 'blue',
     })
-        .setLngLat([-98.4861, 29.4260])
+        .setLngLat([-74.0445, 40.6892])
         .setDraggable(true)
         .addTo(map);
 
@@ -49,14 +46,14 @@
         alert(marker.getLngLat().toString())
     })
 
-//Popup Object
+    //Popup Object
     var popup = new mapboxgl.Popup()
         .setLngLat(marker.getLngLat())
-        .setHTML("<h3>The Alamo</h3>")
+        .setHTML("<h3>Statue of Liberty</h3>")
         .addTo(map);
 
     marker.setPopup(popup);
-    popup.addClassName("popup-font");
 </script>
+
 </body>
 </html>
