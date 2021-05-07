@@ -18,6 +18,7 @@
 
 
 <script src="js/keys.js"></script>
+<script src="js/jquery-3.6.0.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <script>
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
@@ -49,8 +50,10 @@
         .addTo(map);
 
     marker.setPopup(popup);
+
     marker.setDraggable(true);
-    marker.on('dragend', function(){
+
+    marker.on('dragend', function() {
         $("h1").html(marker.getLngLat().toString())
         marker.setPopup();
     })

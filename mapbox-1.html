@@ -15,6 +15,7 @@
 <h2>Flying off to Dallas!</h2>
 <div id='map' style='width: 400px; height: 300px;'></div>
 
+<button id="zoom">Zoom In</button>
 <script src="js/keys.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <script>
@@ -30,7 +31,7 @@
     setTimeout(function() {
         map.flyTo({
             center: [-97.0403, 32.8998],
-            zoom: 9,
+            zoom: 12,
             speed: 0.3,
             curve: 1,
             easing(t) {
@@ -38,6 +39,14 @@
             }
         });
     }, 1000)
+
+    console.log("The current zoom value is: ",map.getZoom());
+    //BONUS
+
+    // $('#zoom').click(function() {
+    //   map.setZoom(map.getZoom() + 1)
+    //   console.log(map.getZoom());
+    // })
 
     document.querySelector('#zoom').on('click', function () {
     });
