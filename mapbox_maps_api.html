@@ -11,17 +11,44 @@
 
 <div id='map' style='width: 400px; height: 300px;'></div>
 
+<label for="input">Type an address:</label>
+<input type="text" id="input">
+<button id="btn">Click me to move someplace!</button>
+
 <script src="js/keys.js"></script>
+<script src="js/jquery-3.6.0.js"></script>
 <script src="js/mapbox-geocode-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 
 <script>
+
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map',
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-96.8900, 32.9756],
+        zoom: 9
     });
-    map.setStyle("mapbox://styles/mapbox/streets-v11");
-    map.setZoom(12);
+
+    var marker = new mapboxgl.Marker({
+        color: 'purple',
+    })
+        .setLngLat([-96.8900, 32.9756])
+        .addTo(map);
+
+    $("#btn").click(function() {
+        var userInput = $("#input").val();
+        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+            console.log(info);
+            var newCenter = {
+                lng: info[0],
+                lat: info[1]
+            };
+            marker.setLngLat(newCenter);
+            map.flyTo({center: newCenter});
+        });
+    });
+//-96.912708, 32.984104 TOM N TOMS COFFEE COORDINATES
 </script>
 </body>
 </html>
