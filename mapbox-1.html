@@ -39,13 +39,7 @@
         });
     }, 1000)
 
-    $("#zoom").click(function(){
-        var currentZoom = map.getZoom();
-        map.setZoom(currentZoom + 1);
-    });
-    $("#zoomOut").click(function(){
-        var currentZoom = map.getZoom();
-        map.setZoom(currentZoom - 1);
+    document.querySelector('#zoom').on('click', function () {
     });
 
 </script>

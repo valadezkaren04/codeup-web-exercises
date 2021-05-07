@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New York</title>
+    <title>New York </title>
     <!--MAPBOX API-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
     <!---->
@@ -13,7 +13,7 @@
 <!--// TODO: on New York with a marker on the Statue of Liberty. Add a popup to the Statue of-->
 <!--// TODO: Liberty marker with the text "Statue of Liberty".-->
 <!--// *BONUS - when the marker is dragged and released, display the coordinates in an H1.-->
-<h3>New York</h3>
+<h1></h1>
 <div id='map' style='width: 400px; height: 300px;'></div>
 
 
@@ -42,10 +42,6 @@
         .setDraggable(true)
         .addTo(map);
 
-    marker.on('dragend', function(){
-        alert(marker.getLngLat().toString())
-    })
-
     //Popup Object
     var popup = new mapboxgl.Popup()
         .setLngLat(marker.getLngLat())
@@ -53,6 +49,11 @@
         .addTo(map);
 
     marker.setPopup(popup);
+    marker.setDraggable(true);
+    marker.on('dragend', function(){
+        $("h1").html(marker.getLngLat().toString())
+        marker.setPopup();
+    })
 </script>
 
 </body>

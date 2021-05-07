@@ -18,6 +18,7 @@
 <div id='map' style='width: 400px; height: 300px;'></div>
 
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocode-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <script>
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
@@ -57,6 +58,18 @@
 
     marker.setPopup(popup);
     popup.addClassName("popup-font");
+
+// Geocode
+
+    geocode("600 Navarro St #600, San Antonio, TX 78205", MAPBOX_ACCESS_TOKEN).then(function (results) {
+        console.log(results);
+    })
+
+
+    reverseGeocode({lng: -98.489598, lat: 29.426808}, MAPBOX_ACCESS_TOKEN).then(function(results) {
+        console.log(results);
+    })
+
 </script>
 </body>
 </html>
