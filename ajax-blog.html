@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ajax blog</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
@@ -11,5 +11,20 @@
 
 
 <script src="js/jquery-3.6.0.js"></script>
+<script>
+(function(){
+"use strict";
+$.ajax("data/blog.json").done(function (entries) {
+for (var j = 0; j < entries.length; j++) {
+var htmlStr = " ";
+htmlStr += "<H2>" + entries[j].title + "</H2>";
+htmlStr += "<p>" + entries[j].content + "</p>" + "<hr>";
+htmlStr += "<p class='text-right'>" + "Tags: " + entries[j].categories + "</p>";
+
+$("#posts").append(htmlStr);
+}
+});
+})()
+</script>
 </body>
 </html>
