@@ -59,18 +59,18 @@
         });
     });
 
-    $("#btn").click(function() {
-        var userInput = $("#input").val();
-        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
-            console.log(info);
-            var newCenter = {
-                lng: info[0],
-                lat: info[1]
-            };
-            marker.setLngLat(newCenter);
-            map.flyTo({center: newCenter});
-        });
-    });
+    // $("#btn").click(function() {
+    //     var userInput = $("#input").val();
+    //     geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+    //         console.log(info);
+    //         var newCenter = {
+    //             lng: info[0],
+    //             lat: info[1]
+    //         };
+    //         marker.setLngLat(newCenter);
+    //         map.flyTo({center: newCenter});
+    //     });
+    // });
 //-96.912708, 32.984104 TOM N TOMS COFFEE COORDINATES
 </script>
 </body>
