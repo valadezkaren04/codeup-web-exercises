@@ -3,30 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather</title>
-    <!--MAPBOX API-->
+    <!--***MAPBOX API***-->
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
-    <!---->
+    <!--****BOOTSTRAP***-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--****************-->
 </head>
 <body>
-
+<h1>Weather Forecast</h1>
+<div id="current"><h2>cur</h2>current weather conditions</div>
+<div class="forecast"></div>
 <div id='map' style='width: 400px; height: 300px;'></div>
 
 <!--****************-->
 <script src="js/keys.js"></script>
 <script src="js/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 <script src="js/mapbox-geocode-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <!--****************-->
 <script>
-    //**********shows weather in console**********//
-    $.get("http://api.openweathermap.org/data/2.5/onecall", {
-        APPID: WEATHER_MAP_TOKEN,
-        lat:    32.9756,
-        lon:   -96.8900,
-        units: "imperial"
-    }).done(function(data) {
-        console.log('current weather', data);
-    });
+    function weatherForecast() {
+        $(".forecast").html('');
+        //**********shows weather in console**********//
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+            APPID: WEATHER_MAP_TOKEN,
+            lat: 32.9756,
+            lon: -96.8900,
+            units: "imperial",
+            exclude: "minutely",
+        }).done(function (data) {
+            console.log(data);
+            var weatherConditions = data.current.temp.toFixed(0);
+            $("#current").append(weatherConditions);
+            for (var i=0; i < 3; i++) {
+                var dailyCast = data.daily[i];
+                var date = new Date(dailyCast.dt * 1000);
+                var oneDay = date.getUTCMonth();
+
+            }
+        });
+    }
 
     //**********displays map on page**********//
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
@@ -45,10 +68,10 @@
     //**********marker on map**********//
     var marker = new mapboxgl.Marker({
         color: 'purple',
+        draggable: true
     })
         .setLngLat([-96.8900, 32.9756])
         .addTo(map);
-
 
 
 </script>
