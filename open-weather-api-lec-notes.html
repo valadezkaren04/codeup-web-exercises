@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Open the console!</h1>
+
+<script src="js/jquery-3.6.0.js"></script>
+<script src="js/keys.js"></script>
+
+<script>
+    var coordinates = [35.7143, 83.5102];
+    $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/weather",
+        type: "GET",
+        data: {
+            APPID: WEATHER_MAP_TOKEN,
+            q: "Dallas, US"
+        }
+    })
+
+</script>
+
+</body>
+</html>
