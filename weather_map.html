@@ -15,6 +15,15 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <!--****************-->
 <script>
+    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+        APPID: WEATHER_MAP_TOKEN,
+        lat:    32.9756,
+        lon:   -96.8900,
+        units: "imperial"
+    }).done(function(data) {
+        console.log('5 day forecast', data);
+    });
+
 
 </script>
 

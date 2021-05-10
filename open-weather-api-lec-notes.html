@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Open the console!</h1>
-
+<div id='map' style='width: 400px; height: 300px;'></div>
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocode-utils.js"></script>
@@ -29,7 +29,14 @@
     }).done(function(data) {
         console.log('5 day forecast', data);
     });
-
+    mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-96.8900, 32.9756],
+        zoom: 9
+    });
+    console.log(map.getCenter());
 
 </script>
 
