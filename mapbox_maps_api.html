@@ -11,9 +11,7 @@
 
 <div id='map' style='width: 400px; height: 300px;'></div>
 
-<label for="input">Type an address:</label>
-<input type="text" id="input">
-<button id="btn">Click me to move someplace!</button>
+
 
 <script src="js/keys.js"></script>
 <script src="js/jquery-3.6.0.js"></script>
@@ -35,6 +33,31 @@
     })
         .setLngLat([-96.8900, 32.9756])
         .addTo(map);
+
+    var faves = [
+        {
+            name: 'Tom N Toms Coffee',
+            location: '2625 Old Denton Rd #406, Carrollton, TX 75007',
+        },
+        {
+            name: 'Costa Vida Fresh Mexican Grill',
+            location: '2628 Long Prairie Rd #110, Flower Mound, TX 75022',
+        },{
+            name: 'Texas Roadhouse',
+            location: '3811 Long Prairie Rd, Flower Mound, TX 75028',
+        }
+    ];
+
+    faves.forEach(function(restaurant) {
+        geocode(restaurant.location, MAPBOX_ACCESS_TOKEN).then(function(position) {
+            var popup = new mapboxgl.Popup()
+                .setHTML('<h3>' + restaurant.name + '</h3>');
+            var marker = new mapboxgl.Marker()
+                .setLngLat(position)
+                .addTo(map)
+                .setPopup(popup);
+        });
+    });
 
     $("#btn").click(function() {
         var userInput = $("#input").val();
