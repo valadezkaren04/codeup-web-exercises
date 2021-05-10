@@ -15,7 +15,8 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <!--****************-->
 <script>
-    $.get("http://api.openweathermap.org/data/2.5/forecast", {
+    //**********shows weather in console**********//
+    $.get("http://api.openweathermap.org/data/2.5/onecall", {
         APPID: WEATHER_MAP_TOKEN,
         lat:    32.9756,
         lon:   -96.8900,
@@ -24,6 +25,15 @@
         console.log('5 day forecast', data);
     });
 
+    //**********displays map on page**********//
+    mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-96.8900, 32.9756],
+        zoom: 9
+    });
+    console.log(map.getCenter());
 
 </script>
 
