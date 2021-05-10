@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>Mapbox Exercise</title>
     <!--MAPBOX API-->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
     <!---->
 </head>
 <body>
 
 <div id='map' style='width: 400px; height: 300px;'></div>
-
 
 
 <script src="js/keys.js"></script>
@@ -19,6 +18,51 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 
 <script>
+
+    // mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
+    // var map = new mapboxgl.Map({
+    //     container: 'map',
+    // });
+    //
+    // map.setStyle('mapbox://styles/mapbox/dark-v10')
+    // map.setZoom(15)
+    // map.setCenter([-96.8900, 32.9756]) // Carrolton, tx
+    //
+    // var tomNTomsCoffee = new mapboxgl.Marker({
+    //          color: 'purple',
+    //          draggable: false,
+    //     })
+    //         .setLngLat([-96.912708, 32.984104])
+    //          .addTo(map);
+    //      var tomPop = new mapboxgl.Popup()
+    //          .setLngLat(tomNTomsCoffee.getLngLat())
+    //          .setHTML('<h3>Tom N Toms Coffee</h3>');
+    //          tomNTomsCoffee.setPopup(tomPop);
+    //
+    // var texasRoadhuse = new mapboxgl.Marker({
+    //     color: 'purple',
+    //     draggable: false,
+    // })
+    //     .setLngLat([-97.070466, 33.037369])
+    //     .addTo(map);
+    // var roadPop = new mapboxgl.Popup()
+    //     .setLngLat(texasRoadhuse.getLngLat())
+    //     .setHTML('<h3>Twxas Roadhouse</h3>');
+    // texasRoadhuse.setPopup(roadPop);
+    //
+    // var costaVida = new mapboxgl.Marker({
+    //     color: 'purple',
+    //     draggable: false,
+    // })
+    //     .setLngLat([-97.07059, 33.02244])
+    //     .addTo(map);
+    // var costaPop = new mapboxgl.Popup()
+    //     .setLngLat(costaVida.getLngLat())
+    //     .setHTML('<h3>Costa Vida Fresh Mexican Grill</h3>');
+    // costaVida.setPopup(costaPop);
+
+
+//************************************************************
 
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
@@ -42,14 +86,14 @@
         {
             name: 'Costa Vida Fresh Mexican Grill',
             location: '2628 Long Prairie Rd #110, Flower Mound, TX 75022',
-        },{
+        }, {
             name: 'Texas Roadhouse',
             location: '3811 Long Prairie Rd, Flower Mound, TX 75028',
         }
     ];
 
-    faves.forEach(function(restaurant) {
-        geocode(restaurant.location, MAPBOX_ACCESS_TOKEN).then(function(position) {
+    faves.forEach(function (restaurant) {
+        geocode(restaurant.location, MAPBOX_ACCESS_TOKEN).then(function (position) {
             var popup = new mapboxgl.Popup()
                 .setHTML('<h3>' + restaurant.name + '</h3>');
             var marker = new mapboxgl.Marker()
@@ -59,19 +103,23 @@
         });
     });
 
-    // $("#btn").click(function() {
-    //     var userInput = $("#input").val();
-    //     geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
-    //         console.log(info);
-    //         var newCenter = {
-    //             lng: info[0],
-    //             lat: info[1]
-    //         };
-    //         marker.setLngLat(newCenter);
-    //         map.flyTo({center: newCenter});
-    //     });
-    // });
-//-96.912708, 32.984104 TOM N TOMS COFFEE COORDINATES
+    $("#btn").click(function() {
+        var userInput = $("#input").val();
+        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+            console.log(info);
+            var newCenter = {
+                lng: info[0],
+                lat: info[1]
+            };
+            marker.setLngLat(newCenter);
+            map.flyTo({center: newCenter});
+        });
+    });
 </script>
 </body>
 </html>
+
+
+<!--// [-96.912708, 32.984104] TOM N TOMS COFFEE COORDINATES-->
+<!--// [-97.070466, 33.037369] TEXAS ROADHOUSE COORDINATES-->
+<!--// [-97.07059, 33.02244] COSTA VIDA FRESH MEXICAN GRILL COORDINATES-->
