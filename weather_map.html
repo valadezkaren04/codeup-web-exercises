@@ -7,16 +7,19 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet'/>
     <!--****************-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/weather-map.css">
     <!--****************-->
 </head>
 <body>
-<h1>Weather Forecast</h1>
-<div id="day-0" class="weatherDay"></div>
-<div id="day-1" class="weatherDay"></div>
-<div id="day-2" class="weatherDay"></div>
-<div id="day-3" class="weatherDay"></div>
-<div id="day-4" class="weatherDay"></div>
-<div></div>
+<h1 class="text-center">Weather Forecast</h1>
+<div class="d-flex flex-direction-row">
+    <div id="day-0" class="weatherDay border border-primary "></div>
+    <div id="day-1" class="weatherDay border border-primary"></div>
+    <div id="day-2" class="weatherDay border border-primary"></div>
+    <div id="day-3" class="weatherDay border border-primary"></div>
+    <div id="day-4" class="weatherDay border border-primary"></div>
+    <div></div>
+</div>
 <div id='map' style='width: 400px; height: 300px;'></div>
 
 <!--****************-->
@@ -69,7 +72,7 @@
             }
 
             for (var i = 0; i <= 4; ++i) {
-                $('#day-' + i + '').html(highLowTemp(i) + ' ' + dailyDate(i) + '<br>' + willItRain(i) + '<br>' + weatherDes(i) + '<br>' + humidityLevel(i));
+                $('#day-' + i + '').html(highLowTemp(i) + '<br> ' + dailyDate(i) + '<br>' + willItRain(i) + '<br>' + weatherDes(i) + '<br>' + humidityLevel(i));
             }
         });
     }
