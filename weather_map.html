@@ -13,9 +13,15 @@
 <body>
 <h2 class="text-center">Weather Forecast</h2>
 <div id="container">
-    <div id="mainContent" class="d-flex justify-content-center"></div>
+    <div id="weatherDisplay" class="d-flex justify-content-center"></div>
 </div>
 <div id='map' style='width: 600px; height: 400px;'></div>
+<div>
+    <label for="text-input">Search address</label>
+    <input type="text" id="text-input">
+    <button type="submit" id="btn">Take me there</button>
+    <div id="searchWeather"></div>
+</div>
 
 
 <!--****************-->
@@ -49,7 +55,7 @@
                 htmlStr += 'Humidity: ' + resp.daily[i].humidity + '%' + '<br>';
                 htmlStr += 'Precipitation: ' + resp.daily[i].pop + '%' + '<br>';
                 htmlStr += `</div></div>`
-                $('#mainContent').html(htmlStr);
+                $('#weatherDisplay').html(htmlStr);
             }
             console.log(resp);
         });
@@ -70,13 +76,64 @@
 
     map.addControl(new mapboxgl.NavigationControl());
 
+    //**********popup on map*********//
+    var latLng = {};
+
+    var popup = new mapboxgl.Popup()
+        .setHTML("")
+        .setMaxWidth("300px");
+
     //**********marker on map**********//
     var marker = new mapboxgl.Marker({
         color: 'purple',
         draggable: true
     })
         .setLngLat([-96.8900, 32.9756])
-        .addTo(map);
+        .addTo(map)
+        .setPopup(popup);
+
+    marker.on('dragend', function (){
+        newCoordinates = marker.getLngLat().toArray();
+        $("#searchWeather").html("");
+        weatherForecast();
+        updateTheInfo();
+    });
+
+    function updateTheInfo() {
+        var lngLat = marker.getLngLat();
+        latLngObj = {lat: lngLat.lat, lng: lngLat.lng};
+        reverseGeocode(latLngObj, MAPBOX_ACCESS_TOKEN).then(function (results) {
+            var arr = results.features;
+            var place = arr.find(x => x.id.includes('place') === true);
+            marker._popup._content.innerHTML = '<h4>' + place.place_name + '</h4>';
+            // console.log(results);
+        })
+    }
+
+    //**********search bar**********//
+    var userInput = "";
+    $("#btn").click(function() {
+        userInput = $('#text-input').val();
+        console.log(userInput);
+        markerToNewPlace();
+    })
+
+    function markerToNewPlace() {
+        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (results){
+            marker.setLngLat(results);
+            // console.log(results);
+            newCoordinates = marker.getLngLat().toArray().reverse();
+            updateTheInfo();
+            weatherForecast();
+            map.flyTo({
+                center: results,
+                zoom: 9,
+                speed: 0.5
+            });
+        });
+    }
+
+
 </script>
 
 <!--****************-->
