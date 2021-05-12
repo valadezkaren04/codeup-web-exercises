@@ -3,12 +3,11 @@
 * {
     font-family: 'Ubuntu', sans-serif;
 }
-.weatherDay {
-    padding: 5px;
-    margin: 5px;
-    border: 1px solid #52a2d9;
-}
 
-.weatherBox {
-    margin-bottom: 10px;
+.card {
+    border: 1px solid #20d4f3;
+    background-image: linear-gradient(#2594b0, #95daff);
+    padding: 10px;
+    border-radius: 5%;
+
 }

@@ -11,25 +11,11 @@
     <!--****************-->
 </head>
 <body>
-<!--<h1 class="text-center">Weather Forecast</h1>-->
-<!--<div class="weatherBox d-flex flex-direction-row">-->
-<!--    <div id="day-0" class="weatherDay"></div>-->
-<!--    <div id="day-1" class="weatherDay"></div>-->
-<!--    <div id="day-2" class="weatherDay"></div>-->
-<!--    <div id="day-3" class="weatherDay"></div>-->
-<!--    <div id="day-4" class="weatherDay"></div>-->
-<!--    <div></div>-->
-<!--</div>-->
-<div id="container" class="container">
-    <h2>Weather Forecast</h2>
-    <div id="containerMain" class="d-flex justify-content-center"></div>
-    <div id='map' style='width: 600px; height: 400px;' class=""></div>
-    <form id="mapForm" class="d-flex mt-2">
-        <input type="text" id="mapSearch"  placeholder="Search the forecast">
-        <button type="submit" id="btn" class="btn-2">Search!</button>
-    </form>
+<h2 class="text-center">Weather Forecast</h2>
+<div id="container">
+    <div id="mainContent" class="d-flex justify-content-center"></div>
 </div>
-
+<div id='map' style='width: 600px; height: 400px;'></div>
 
 
 <!--****************-->
@@ -40,7 +26,7 @@
 <!--****************-->
 <script>
     function weatherForecast() {
-        //**********shows weather in console**********//
+        //**********shows weather in console and browser**********//
         $.get("http://api.openweathermap.org/data/2.5/onecall", {
             APPID: WEATHER_MAP_TOKEN,
             lat:    32.9756,
@@ -54,52 +40,18 @@
                 var date = resp.daily[i];
                 var displayDate = new Date(date.dt * 1000).toDateString();
                 displayDate = displayDate.slice(0, displayDate.length - 4)
-                htmlStr += `<div class= "card w-25 m-2 col">`
-                htmlStr += `${displayDate}<br>`
-                htmlStr += `<img style='margin: auto' width="100px" src="http://openweathermap.org/img/wn/${resp.daily[i].weather[0].icon}@2x.png\n"/>`
-                htmlStr += `<p>${resp.daily[i].weather[0].main}<br>`
-                htmlStr += `HI: ${Math.round(resp.daily[i].temp.max)} LO: ${Math.round(resp.daily[i].temp.min)}<br>`
-                htmlStr += `Humidity: ${resp.daily[i].humidity}%<br>`
-                htmlStr += `Chance of rain: ${Math.round(resp.daily[i].rain)}%<br>`
-                htmlStr += `</p></div>`
-                $('#containerMain').html(htmlStr);
+                htmlStr += `<div class= "card w-70 m-2 col">`
+                htmlStr += '<h6 class="text-center">' + displayDate + "</h6>";
+                htmlStr += `<img style='margin: 0 auto' width="100px" src="http://openweathermap.org/img/wn/${resp.daily[i].weather[0].icon}@2x.png\n"/>`
+                htmlStr += '<div class="text-center">' + resp.daily[i].weather[0].description + "</div>";
+                htmlStr += 'HI: ' + Math.round(resp.daily[i].temp.max) + '&#8457;' + '<br>';
+                htmlStr += 'LO: ' + Math.round(resp.daily[i].temp.min) + '&#8457;' +'<br>';
+                htmlStr += 'Humidity: ' + resp.daily[i].humidity + '%' + '<br>';
+                htmlStr += 'Precipitation: ' + resp.daily[i].pop + '%' + '<br>';
+                htmlStr += `</div></div>`
+                $('#mainContent').html(htmlStr);
             }
             console.log(resp);
-
-
-            // function willItRain(index) {
-            //     var rainDeci = resp.daily[index].pop; //removes the decimals off the end
-            //     var percentRain = 'Chance of rain: ' + rainDeci * 100 + '%'; //turns index into nice num display
-            //     return percentRain;
-            // }
-            //
-            // function humidityLevel(index) {
-            //     var humidity = 'Humidity: ' + resp.daily[index].humidity  + '%'; //gets the humidity
-            //     return humidity;
-            // }
-            //
-            // function weatherDes(index) {
-            //     var description = resp.daily[index].weather[0].description; //describes the weather
-            //     return description;
-            // }
-            //
-            // function dailyDate(index) {
-            //     var today = resp.daily[index]; //gets resp ; returns date
-            //     var todayDate = new Date(today.dt * 1000).toString();
-            //     todayDate = todayDate.split(' ');
-            //     var date = [todayDate[0], todayDate[1], todayDate[2]].join(' ');
-            //     return date;
-            // }
-            //
-            // function highLowTemp(index) {
-            //     var highTemp = Math.round(resp.daily[index].temp.max); //gets the highest temp
-            //     var lowTemp = Math.round(resp.daily[0].temp.min); //gets lowest temp
-            //     var highLowTemp = highTemp + `\xB0F / ` + lowTemp + '\xB0F';
-            //     return highLowTemp;
-            // }
-
-
-
         });
     }
     weatherForecast();
@@ -121,7 +73,7 @@
     //**********marker on map**********//
     var marker = new mapboxgl.Marker({
         color: 'purple',
-        draggable: false
+        draggable: true
     })
         .setLngLat([-96.8900, 32.9756])
         .addTo(map);
