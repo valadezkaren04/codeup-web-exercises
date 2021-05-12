@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
 .weatherDay {
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
+    border: 1px solid #52a2d9;
 }
 
+.weatherBox {
+    margin-bottom: 10px;
+}
