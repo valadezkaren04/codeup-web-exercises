@@ -11,16 +11,27 @@
     <!--****************-->
 </head>
 <body>
-<h2 class="text-center">Weather Forecast</h2>
+<header>
+    <nav class="navbar navbar-light" style="background-color: #cad7e0;">
+        <h2 class="text-center">Weather Forecast</h2>
+        <a class="home" href="#">Home</a>
+        <a class="severe" href="#">Severe</a>
+        <div>
+            <label for="user-input"></label>
+            <input type="text" id="user-input" placeholder="search location">
+            <button type="submit" id="btn">Map It</button>
+        </div>
+        <a class="local-news" href="#">Photos & Videos</a>
+        <a class="local-news" href="#">Local News</a>
+    </nav>
+
+</header>
+
 <div id="container">
     <div id="weatherDisplay" class="d-flex justify-content-center"></div>
 </div>
-<div id='map' style='width: 600px; height: 400px;'></div>
-<div>
-    <label for="user-input"></label>
-    <input type="text" id="user-input" placeholder="search location">
-    <button type="submit" id="btn">Take me there</button>
-</div>
+<div id='map' style='height: 45vh;' class="w-50; "></div>
+
 <div id="searchWeather"></div>
 
 <!--****************-->
@@ -30,7 +41,7 @@
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <!--****************-->
 <script>
-    var lat= 32.9756;
+    var lat = 32.9756;
     var lon = -96.8900;
     function weatherForecast(lat, lng) {
         //**********shows weather in console and browser**********//
@@ -47,7 +58,7 @@
                 var date = resp.daily[i];
                 var displayDate = new Date(date.dt * 1000).toDateString();
                 displayDate = displayDate.slice(0, displayDate.length - 4)
-                htmlStr += `<div class= "card w-70 m-2 col">`
+                htmlStr += `<div class= "card col">`
                 htmlStr += '<h6 class="text-center">' + displayDate + "</h6>";
                 htmlStr += `<img style='margin: 0 auto' width="100px" src="http://openweathermap.org/img/wn/${resp.daily[i].weather[0].icon}@2x.png\n"/>`
                 htmlStr += '<div class="text-center">' + resp.daily[i].weather[0].description + "</div>";
