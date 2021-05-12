@@ -2,26 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
 
 body {
-    background-color: #e3f2fd;
+    background-color: #8a95bf;
 }
 
-div {
+* {
     font-family: 'Ubuntu', sans-serif;
 }
-
-#btn, #user-input {
-    font-family: 'Libre Franklin', sans-serif;
+#btn {
+    color: whitesmoke;
 }
-
+hr {
+    border-bottom: 1px solid #757070;
+    margin: 2px;
+}
 #btn, #user-input {
     background-color: #e3f2fd;
     border: 1px solid #4d9cae;
 }
 .card {
     border: 1px solid #4d9cae;
-    background-image: linear-gradient(#2594b0, #95daff);
+    background-image: linear-gradient(#a3daff, #2b9eba);
     padding: 10px;
     border-radius: 5%;
     width: 70%;
     margin: 5px 5px 20px 5px;
+    box-shadow: 3px 5px #222121;
 }
