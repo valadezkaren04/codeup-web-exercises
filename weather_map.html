@@ -121,7 +121,7 @@
     });
 
     //**********search bar**********//
-    $('#btn').click(function(e){
+    $('#btn').click(function(){
         var userInput = $('#user-input').val()
         console.log(userInput);
         var searchLocation = geocode(userInput, MAPBOX_ACCESS_TOKEN);
