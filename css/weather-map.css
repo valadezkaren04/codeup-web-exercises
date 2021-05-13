@@ -12,7 +12,7 @@ body {
     color: whitesmoke;
 }
 hr {
-    border-bottom: 1px solid #757070;
+    border-bottom: 1px solid #f5eded;
     margin: 2px;
 }
 #btn, #user-input {
@@ -28,3 +28,26 @@ hr {
     margin: 5px 5px 20px 5px;
     box-shadow: 3px 5px #222121;
 }
+
+.icon-info {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+}
+
+i {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.followUs {
+    font-size: 10px;
+    padding-top: 5px;
+
+}
+.icon-info {
+    padding-right: 10px;
+}
+
