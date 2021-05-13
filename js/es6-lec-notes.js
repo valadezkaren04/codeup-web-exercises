@@ -89,9 +89,33 @@
 
 //TEMPLATE STRINGS:
 
-let name = 'Karen';
-console.log(`My name is ${name}`);
+// let name = 'Karen';
+// console.log(`My name is ${name}`);
+//
+// console.log('My name is ' + name);
+//
+// console.log(`My name is ${name.toUpperCase() + ' Valadez'} in all caps!`);
 
-console.log('My name is ' + name);
+let nationalParks = ["Grand Canyon", "Yellow Stone", "Alcatraz"];
 
-console.log(`My name is ${name.toUpperCase() + ' Valadez'} in all caps!`);
+let parkList = `<ul>
+    <li>${nationalParks[0]}</li>
+    <li>${nationalParks[1]}</li>
+    <li>${nationalParks[2]}</li>
+</ul>`
+document.write(parkList); //writes the array list on the web
+
+//for....of loop
+
+//regular for loop
+// for (let i = 0; i < nationalParks.length; i++) {
+//     console.log(nationalParks[i]);
+// }
+
+//for each loop
+// nationalParks.forEach(function(park, index) {
+    // console.log(index); // 1 2 3
+    // console.log(park); // name of park
+    // console.log(park[index]); //G e c // G "'G'rand canyon = 1" , e "y'e'llow stone = 2 // c "al'c'atraz = 3rd letter
+// })
+
