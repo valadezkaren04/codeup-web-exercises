@@ -33,9 +33,9 @@ const users = [
 // to the languages array
 // TODO: replace the `var` keyword with `const`, then try to reassign a variable
 // declared as `const`
-var name = 'karen Valadez';
-var email = 'ValadezK@gmail.com';
-var languages = [];
+const name = 'karen Valadez';
+const email = 'ValadezK@gmail.com';
+const languages = [];
 
 // TODO: rewrite the object literal using object property shorthand
 users.push({

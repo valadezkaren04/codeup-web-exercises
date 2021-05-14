@@ -284,5 +284,65 @@ let describeTrail = trailObj => {
 }
 console.log(describeTrail(trail));
 
+let movies = [
+    {
+        title: 'Lord of the Rings: The Fellowship of the Ring',
+        description: 'A group of travelers venture to a volcano to destroy a powerful object.'
+    },
+    {
+        title: "The Bee Movie",
+        description: 'A movie about bees.'
+    },
+    {
+        title: "Harry Potter and the Chamber of Secrets",
+        description: 'A young boy goes to wizarding school where a big snake starts attacking people. Who is it??'
+    }]
+
+// function getMovieInfo(listOfMovies) {
+//     for (let movie of listOfMovies) {
+//         let {title, description} = movie;
+//         console.log(`The movie you selected is ${title}. A short description would be: ${description}`);
+//     }
+// cannot log due to blocked scope of let.
+// console.log(title)
+// }
+// cannot log with var due to function scope
+// console.log(title);
+
+// Example from weather app project.
+// let {daily, current} = myWeatherRequest;
+//
+// let {temp, clouds} = daily;
+//
+// getMovieInfo(movies);
+
+// ====== Array Destructuring ======
+
+// Old way
+
+// var lotr = movies[0];
+// var beeMovie = movies[1];
+// var hp = movies[2];
+//
+// console.log(lotr, beeMovie, hp);
+
+// New ES6 Way
+// can use VAR as well to assign the variable.
+// Always starts at the 0 index.
+// let [firstMovie] = movies;
+//
+// console.log(firstMovie);
+//
+// // can further destructure the object through this variable.
+// let {title} = firstMovie;
+//
+// console.log(title);
+
+
+// let [firstMovie, ...restOfMovies] = movies;
+//
+// console.log(firstMovie);
+//
+// console.log(restOfMovies);
 
 
