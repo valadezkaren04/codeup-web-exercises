@@ -106,6 +106,7 @@ let parkList = `<ul>
 document.write(parkList); //writes the array list on the web
 
 //for....of loop
+//works with node lists
 
 //regular for loop
 // for (let i = 0; i < nationalParks.length; i++) {
@@ -118,4 +119,170 @@ document.write(parkList); //writes the array list on the web
     // console.log(park); // name of park
     // console.log(park[index]); //G e c // G "'G'rand canyon = 1" , e "y'e'llow stone = 2 // c "al'c'atraz = 3rd letter
 // })
+
+// NEW ES6 For.. of loop
+// Structure
+// for(variable of iterable/collection) {
+//     statement
+// }
+
+// for(let eachPark of nationalParks) {
+//     console.log(eachPark);
+// }
+
+// let listItems = document.getElementsByTagName('li');
+// console.log(listItems);
+//
+// // can use const or let!
+// for(const listItem of listItems) {
+//     listItem.innerHTML += ' is an awesome park!';
+// }
+
+// ===== ARROW FUNCTIONS =====
+
+// function test() {
+//     return 'Hello from the test function!';
+// }
+//
+// console.log(test());
+//
+// var test2 = function() {
+//     return 'Hello from test2 function!'
+// }
+//
+// console.log(test2())
+//
+// // ES6 way
+//
+// const test3 = () => 'Hello from test3 function!';
+//
+// console.log(test3())
+
+// one parameter does not need parenthesis
+
+// const sayHello = (name) => {
+//     let nameInCaps = name.toUpperCase();
+//     return nameInCaps
+// }
+
+// function sayHello(name) {
+//     let nameInCaps = name.toUpperCase();
+//     return nameInCaps;
+// }
+
+// multiple parameters will need to be in parenthesis
+// const sayHello = (firstName, lastName) => {
+//     let fullName = firstName.toUpperCase() + lastName.toUpperCase();
+//     return fullName;
+// }
+
+// console.log(sayHello('Jay', 'Arredondo'))
+
+// using an anonymous function expression
+// nationalParks.forEach(park => {
+//     let capsParks = park.toUpperCase();
+//     console.log(capsParks);
+// });
+
+// ==== Default Function Parameter Values ====
+
+// ES5 Syntax
+
+// function add(num1, num2) {
+//     if(num1 === undefined) {
+//         num1 = 2;
+//     }
+//     if(num2 === undefined) {
+//         num2 = 2;
+//     }
+//     return num1+ num2;
+// }
+//
+// console.log(add());
+// console.log(add(5))
+// console.log(add(5,5))
+
+// ES6 (better) way
+
+// const add = (num1 = 2, num2 = 4) => {
+//     return num1 + num2;
+// }
+//
+// console.log(add());
+// console.log(add(5));
+// console.log(add(5,5));
+
+// ===== Object Property Variable Assignment (shorthand) =====
+
+// ES5 syntax
+
+// var name = 'Loopy Trail';
+// var distance = 4.6
+// var difficulty = 'moderate';
+// var isPaved = true
+
+// var trail = {
+//     name: name,
+//     distance: distance,
+//     difficulty: difficulty,
+//     isPaved: isPaved
+// }
+
+// console.log(trail);
+
+// ES6 (BETTER) Way
+
+let name = 'Loopy Trail';
+let distance = 4.6
+let difficulty = 'moderate';
+let isPaved = true
+
+let trail = {
+    name,
+    distance,
+    difficulty,
+    isPaved
+};
+console.log(trail);
+
+// ====== Object Destructuring ======
+
+// ES5 Way
+
+// let nameOfTrail = trail.name;
+// let distanceOfLoopTrail = trail.distance;
+//
+// console.log(nameOfTrail);
+// console.log(distanceOfLoopTrail);
+
+// ES6 Way
+
+let myObject = {
+    movieName: 'The Incredibles',
+    length: '1hr 43min'
+}
+
+let {movieName, length} = myObject;
+
+console.log(movieName, length);
+
+// ES5 function for object destructuring
+
+// function describeTrail(trailObj) {
+//     var name = trailObj.name;
+//     var distance = trailObj.distance;
+//
+//     return name + " " + "is " + distance + "mi long";
+// }
+
+// console.log(describeTrail(trail))
+
+let describeTrail = trailObj => {
+    var {name, distance} = trailObj;
+    return name + " " + "is " + distance + "mi long";
+
+}
+console.log(describeTrail(trail));
+
+
 
