@@ -27,7 +27,7 @@
 
 // .map() : it goes through all the array
 //using the same let as above // .forEach and .map() both need instructions
-let output = "";
+// let output = "";
 // let prices = [32.99, 21.99, 12.99, 10.99, 19.99, 8.98, 5.99];
 // let pricesAfterTax = [];
 
@@ -108,11 +108,43 @@ const cars = [
 // });
 
 // .filter()
-const under10K = cars.filter(function(car) {
-    return car.mileage < 10000;
+// const under10K = cars.filter(function(car) {
+//     return car.mileage < 10000;
+// });
+//
+// under10K.forEach(function(car) {
+//     output = output + "<p>I found a " + car.make + " " + car.model + " with " + car.mileage + " miles.</p>";
+//     $("#output").html(output);
+// });
+
+let output = "";
+let prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
+var affordablesWithTax = prices.filter(function(price){
+    return price < 10;
+}).map(function(price){
+    let tax = (price * 0.0825).toFixed(2);
+    let total = (parseFloat(price) + parseFloat(tax)).toFixed(2);
+    return parseFloat(total);
 });
 
-under10K.forEach(function(car) {
-    output = output + "<p>I found a " + car.make + " " + car.model + " with " + car.mileage + " miles.</p>";
+affordablesWithTax.forEach(function(itemPrice){
+    output = output + "<p>" + itemPrice + "</p>";
     $("#output").html(output);
 });
+// .reduce() : takes a accumulator parameter
+let totalCost = affordablesWithTax.reduce(function(total, itemPrice) {
+    console.log(`The index is: ${index}, the total is: ${total}. the itemPrice is: ${itemPrice}.`);
+    return total + itemPrice;
+});
+console.log(totalCost);
+
+var averageCost = affordablesWithTax.reduce(function(total, itemPrice, index, array) {
+    total = total + itemPrice;
+    if (index === array.length() - 1) {
+        return total/array.length;
+    } else {
+        return total;
+    }
+});
+console.log(averageCost.toFixed(2));
