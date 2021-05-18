@@ -89,9 +89,13 @@ let deleteOptions = {
     headers: {
         'Content-Type': 'application/json',
     },
-}
+};
 
-$("#uniqueBooks")
-fetch('https://omniscient-glacier-meal.glitch.me/books/8', deleteOptions).then(getBooks);
+$("#uniqueBooks").click(() => {
+    let inputVal = $("#id-to-delete").val();
+    fetch(`https://omniscient-glacier-meal.glitch.me/books/${inputVal}`, deleteOptions)
+        .then(getBooks);
+})
+
 
 
