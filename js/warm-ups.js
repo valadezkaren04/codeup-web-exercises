@@ -22,3 +22,7 @@ for (var i = 1; i <= 30; i++) {
         console.log(i);
     }
 }
+
+//Write a function in JS that returns the number 7
+
+const returnSeven = () => 7;
