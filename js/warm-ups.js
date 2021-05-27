@@ -38,3 +38,4 @@ function takesNum(num) {
     }
 }
 console.log(5);
+
