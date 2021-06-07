@@ -39,3 +39,15 @@ function takesNum(num) {
 }
 console.log(5);
 
+// In a breakout room, discuss the following questions:
+
+//     What is the difference between a .java file and .class file?
+//     A .class file is a compiled .java file.
+//         .java is all text and is human readable.
+//         .class is binary (usually).
+
+//     Why does Java have multiple data types? Why use one over the other?
+        // Java is a bit more strict than those languages, and everything you write is first compiled to what is called byte code, which is sort of like assembly language, but it can only be read by the Java Virtual Machine (JVM). Because of this, you must specify exactly how many bits you need to represent your data.
+
+//     What is the difference between a JRE and a JDK?
+    // JDK is a software development kit whereas JRE is a software bundle that allows Java program to run
