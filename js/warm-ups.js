@@ -37,6 +37,7 @@ function takesNum(num) {
         return 0;
     }
 }
+
 console.log(5);
 
 // In a breakout room, discuss the following questions:
